@@ -1,4 +1,4 @@
-"""todo URL Configuration
+"""django_todo URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from todo_app.views import get_todo_list
+from todo.views import get_todo_list
 
 urlpatterns = [
-      path('', get_todo_list, name = 'get_todo_list')
+    path('admin/', admin.site.urls),
+    path('', get_todo_list, name = 'get_todo_list')
 ]
